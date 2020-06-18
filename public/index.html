@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Creative |</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="wrap">
+        <!--*************BEGIN PROFILE PAGE************************************************************************************ -->
+        <!--*************BEGIN PROFILE PAGE************************************************************************************ -->
+        <div class="page-1 hidden current" id="profile">
+            <div class="Wrap__Profile">
+                <section class="Profile">
+                    <div class="temorary">
+
+                    </div>
+                    <aside class="Profile__Container-left">
+                        <h1 class="Profile__Left-headline USERNAME"></h1>
+                        <div class="Profile__Upload-profilePicture__Container" onclick="toggleDefaultUpload()">
+                            <input class="Profile__Upload-profilePicture" type="file" id="uploadPhoto" accept="image/*"
+                                multiple="false" hidden="hidden" onclick="hideShowProfilePicture()" />
+                            <label class="Profile__Upload-profilePicture-Custom" for="uploadPhoto">
+                                <div class="Insert-profilePicture__Container"><img
+                                        class="Profile__Profile-Picture UserProfilePicture"></div>
+                            </label>
+                        </div>
+                        <button class="Profile__Left-button" type="submit" value="publish"> upload photo </button>
+                        <button class="Profile__Left-button" type="submit" value="publish"> upload video </button>
+                        <!--Audio upload-->
+                        <input type="file" accept="audio/*" name="audio" id="file" onchange="loadFile(event)"
+                            style="display: none;">
+                        <button class="Profile__Left-button"><label for="file" style="cursor: pointer;"> upload mp3
+                            </label></button>
+                        <!--Audio upload-->
+                        <a class="Profile__LogOut-link"
+                            href="file:///Users/carolineolby/Desktop/projekt_nedb/WeCreative-nedb/public/index.html">
+                            logout </a>
+                    </aside>
+                    <article class="Profile__Container-right">
+                        <a class="Profile__ToFeed-link"
+                            href="file:///Users/carolineolby/Desktop/projekt_nedb/WeCreative-nedb/public/index.html">
+                            view feed </a>
+                        <h1 class="Profile__Right-headline"> PROFILE</h1>
+
+                        <p class="Profile__Right-paragraph">Whats on your mind today?</p>
+                        <form action="/post" method="POST" class="Profile__Right-Form">
+                            <input class="Profile__Right-Form-inputTitle" type="text" name="title" placeholder="Title">
+                            <input class="Profile__Right-Form-inputContent" name="content" cols="100" rows="100">
+                            <audio id="output" controls src="" style="display: none;"></audio>
+                            <div class="Profile__Right-Form-button">
+                                <button action="/post" type="submit" value="publish"> publish </button>
+                            </div>
+                        </form>
+                    </article>
+                </section>
+                <section class="ProfilePost">
+                    <article> </article>
+                    <article class="Posts__Container-right">
+                    </article>
+                </section>
+            </div>
+        </div>
+
+        <!--*************END PROFILE PAGE************************************************************************************ -->
+        <!--*************END PROFILE PAGE************************************************************************************ -->
+
+        <!--*************BEGIN SIGNUP PAGE************************************************************************************ -->
+        <!--*************BEGIN SIGNUP PAGE************************************************************************************ -->
+        <div class="page-2 Signup hidden current" id="signup">
+            <div class="Wrap">
+                <div class="Container__Title">
+                    <h1 class="Title__WeCreative">
+                        WE
+                    </h1>
+                    <h1 class="Title__WeCreative-sub">
+                        creative
+                    </h1>
+                </div>
+                <form id="Form__Signup">
+                    <input type="text" name="name" placeholder="name" class="name">
+                    <div class="Error__Name"></div>
+
+                    <input type="text" name="surname" placeholder="surname" class="surname">
+                    <div class="Error__Surname"></div>
+
+                    <input type="text" name="email" placeholder="email" class="email">
+                    <div class="Error__Email"></div>
+
+                    <input type="text" name="username" placeholder="username" class="username">
+                    <div class="Error__Username"></div>
+
+                    <input type="password" name="password" placeholder="password" class="password">
+                    <div class="Error__Password"></div>
+
+                    <input type="password" name="passwordAgain" placeholder="password again" class="passwordAgain">
+                    <div class="Error__Password__Repeat"></div>
+                    <input type="submit" value="SIGN UP">
+                </form>
+            </div>
+            <footer>
+                <p>WE creative &copy; 2020</p>
+            </footer>
+        </div>
+        <!--*************END SIGNUP PAGE************************************************************************************ -->
+        <!--*************END SIGNUP PAGE************************************************************************************ -->
+
+        <!--*************BEGIN LOGIN PAGE************************************************************************************ -->
+        <!--*************BEGIN LOGIN PAGE************************************************************************************ -->
+        <div class="page-3 Login hidden current" id="login">
+            <div class="Wrap">
+                <div class="Container__Title">
+                    <h1 class="Title__WeCreative">
+                        WE
+                    </h1>
+                    <h1 class="Title__WeCreative-sub">
+                        creative
+                    </h1>
+                </div>
+                <form id="Form__Login">
+                    <input type="text" name="name" placeholder="username" class="Name">
+                    <input type="password" value="password" placeholder="password" class="Password">
+                    <div class="Form__Login__Error"></div>
+                    <input class="Form__Login-button" type="submit" value="LOG IN">
+                    <a class="Form__Signup-link"
+                        href="file:///Users/carolineolby/Desktop/projekt_nedb/WeCreative-nedb/public/index.html"> SignUp
+                    </a>
+                </form>
+            </div>
+            <footer>
+                <p>WE creative &copy; 2020</p>
+            </footer>
+        </div>
+        <!--*************END LOGIN PAGE************************************************************************************ -->
+        <!--*************END LOGIN PAGE************************************************************************************ -->
+
+        <!--*************BEGIN FEED PAGE************************************************************************************ -->
+        <!--*************BEGIN FEED PAGE************************************************************************************ -->
+        <div class="page-4 hidden current" id="feed">
+            <div class="Wrap__Feed">
+                <a class="Feed__ToLogin-link"> login </a>
+                <h1 class="Feed__headline USERNAME"></h1>
+                <div class="FeedPosts__Container">
+                    <section class="ProfilePost">
+                        <article> </article>
+                        <article class="Posts__Container-left"></article>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!--*************END FEED PAGE************************************************************************************ -->
+        <!--*************END FEED PAGE************************************************************************************ -->
+
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
